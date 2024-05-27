@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -59,10 +59,6 @@ vetores[i] = new vetor3();
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    ifstream arquivo;
-
-    arquivo.open("arquivo.txt");
     int tam;
     cout << "\n qual o tamanho do cubo? ";
     cin >> tam;
@@ -75,7 +71,7 @@ int main()
                 for(int dd=0; dd<100; dd++){
 
 
-                    if(v2 < tam){//até acabar a base de cima
+                    if(v2 < tam){//atÃ© acabar a base de cima
                         if(v1 == v2){//cada uma das linhas horizontais na face superior do tubo
                             if(v2 == 0){
                                 if(dd >= v2 && dd <= v2+tam) vetor->vetores[v3]->vetores[v2]->vetores[v1]->dados[dd] = 48;//linha horizontal
